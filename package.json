@@ -4,7 +4,7 @@
   "description": "React with redux in action",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node tools/srcServer.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "boostrap": "^2.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.2.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
