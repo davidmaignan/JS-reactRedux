@@ -4,7 +4,12 @@
   "description": "React with redux in action",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node tools/srcServer.js"
+    "start": "npm-run-all --parallel open lint:watch test:watch",
+    "open": "babel-node tools/srcServer.js",
+    "lint": "./node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -43,6 +48,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "cheerio": "^1.0.0-rc.2",
     "colors": "^1.1.2",
     "compression": "^1.7.1",
